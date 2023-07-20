@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fraunces', serif;
+}
+img {
+    max-width: 100%;
+}
+p {
+    font-family: "Barlow";
+    font-size: 18px;
+}
+.container {
+    max-width: 465px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.desktop {
+    display: none;
+}
+.header {
+    background-image: url("images/mobile/image-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px 20px 100px 20px;
+    position: relative;
+}
+.navigation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    width: 0;
+    box-sizing: border-box;
+    line-height: 3;
+    padding: 30px;
+    top: 100px;
+    right: 20px;
+    text-align: center;
+    color: hsl(232, 10%, 55%);
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+    z-index: 2;
+}
+.navigation.open {
+    width: calc(100% - 40px);
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+}
+.navigation.open::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 0;
+    top: -30px;
+    border-right: 50px solid hsl(0, 0%, 100%);
+    border-top: 50px solid transparent;
+    border-left: 50px solid transparent;
+}
+.burger {
+    position: relative;
+    cursor: pointer;
+    top: 0;
+}
+div.navigation p {
+    max-width: max-content;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+div.navigation p:last-child {
+    background-color: hsl(51, 100%, 49%);
+    color: hsl(212, 27%, 19%);
+    padding:  0 25px;
+    border-radius: 30px;
+    font-family: "Fraunces";
+    font-size: 16px;
+    margin-top: 10px;
+}
+.burger span {
+    background-color: hsl(0, 0%, 100%);
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 6px;
+    border-radius: 30px;
+    top: 0;
+    transition: all linear .3s;
+}
+.burger.open span:nth-child(2) {
+    width: 0;
+}
+.burger.open span:first-child {
+    transform: rotate(45deg);
+    position: relative;
+    top: 11px;
+}
+.burger.open span:last-child {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -7px;
+}
+.logo-nav {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.header h1 {
+    font-size: 40px;
+    letter-spacing: 8px;
+    font-weight: 900;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    box-sizing: border-box;
+    line-height: 1.3em;
+    margin-bottom: 50px;
+}
+.arrow {
+    position: relative;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%);
+}
+.card {
+    padding: 40px 20px;
+    text-align: center;
+}
+.card h1 {
+    font-size: 2.3em;
+    margin-bottom: 25px;
+    color: hsl(212, 27%, 19%);
+}
+.card p {
+    color: hsl(210, 4%, 67%);
+    line-height: 1.5;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.card h3 {
+    text-transform: uppercase;
+    color: hsl(212, 27%, 19%);
+    position: relative;
+    opacity: 0.9;
+    width: max-content;
+    margin: 0 auto;
+    transition: all .3s;
+}
+.card h3:hover {
+    opacity: 1;
+    cursor: pointer;
+    transform: translateY(-0.1em);
+}
+.card h3::after {
+    content: "";
+    position: absolute;
+    opacity: 0.4;
+    width: 111%;
+    height: 10px;
+    border-radius: 20px;
+    z-index: -1;
+    bottom: -2px;
+    left: -8px;
+    transition: all .3s;
+}
+.card h3:hover::after {
+    opacity: 1;
+}
+.card.transform h3::after {
+    background-color: hsl(51, 100%, 49%);
+}
+.card.standout h3::after {
+    background-color: hsl(7, 99%, 70%);
+}
+.g-p {
+    padding: 400px 20px 40px 20px;
+    text-align: center;
+}
+.graphic-design {
+    background-image: url("images/mobile/image-graphic-design.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: hsl(167, 40%, 24%);
+}
+.graphic-design h2,
+.photo h2
+    {
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+.graphic-design p,
+.photo p
+    {
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.photo {
+    background-image: url("images/mobile/image-photography.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: hsl(198, 62%, 26%);
+}
+.testimonials h2 {
+    text-align: center;
+    color: hsl(210, 4%, 67%);
+    margin: 50px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 16px;
+}
+.test {
+    padding: 25px;
+    text-align: center;
+}
+.test img {
+    border-radius: 50%;
+    margin-bottom: 30px;
+    width: 80px;
+}
+.test p {
+    color: hsl(213, 9%, 39%);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+.test p:last-child {
+    color: hsl(210, 4%, 67%);
+    font-size: 16px;
+}
+.test h3 {
+    color: hsl(212, 27%, 19%);
+    margin-bottom: 5px;
+}
+.colors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.footer {
+    background-color: hsla(168, 34%, 41%, 0.7);
+    text-align: center;
+    padding: 80px 30px;
+}
+.footer img {
+    width: 200px;
+}
+.links {
+    color: hsl(167, 40%, 24%);
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+.footer p:hover, .footer i:hover {
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    transform: translateY(-0.1em);
+    transition: all 0.4s;
+}
+.socials {
+    color: hsl(167, 40%, 24%);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media(min-width: 1125px) {
+    .container {
+        max-width: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .burger {
+        display: none;
+    }
+    .navigation {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        width: max-content;
+        box-sizing: border-box;
+        line-height: 1;
+        padding: 0;
+        text-align: center;
+        color: hsl(0, 0%, 100%);
+        overflow: visible;
+        opacity: 1;
+        transition: all 0.4s;
+        z-index: 2;
+    }
+    .navigation.open {
+        justify-content: end;
+    }
+    .navigation.open::before {
+        display: none;
+        align-items: end;
+    }
+    div.navigation p {
+        padding: 10px 20px;
+        margin: 5px;
+        
+        border-radius: 30px;
+    
+    }
+    div.navigation p:last-child {
+        background-color: hsl(0, 0%, 100%);
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-family: "Fraunces";
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    div.navigation p:hover {
+        background-color: hsla(0, 0%, 100%, 0.3);
+        transform: translateY(-0.1em);
+    }
+    div.navigation p:last-child:hover {
+        background-color: hsl(0, 0%, 100%);
+    }
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+    .header {
+        grid-column: 1/3;
+        padding: 30px 50px 400px 50px;
+        background-image: url("images/desktop/image-header.jpg");
+        background-position: center;
+    }
+    .logo-nav {
+        align-items: center;
+        margin-bottom: 200px;
+    }
+    .logo-nav img {
+        height: 40px;
+    }
+    .transform {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .testimonials {
+        grid-column: 1/3;
+        grid-row: 5/6;
+        margin-top: 50px;
+    }
+    .testimonials-container {
+        display: flex;
+        margin-bottom: 50px;
+        padding: 0 100px;
+    }
+    .colors {
+        grid-column: 1/3;
+        grid-row: 6/7;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer {
+        grid-column: 1/3;
+        grid-row: 7/8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .links p {
+        margin: 0 30px;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px;
+        text-align: left;
+    }
+    .card h3 {
+        margin: 0;
+    }
+    .g-p {
+        padding: 400px 25% 40px 25%;
+        background-position: center;
+    }
+    .graphic-design {
+        background-image: url("images/desktop/image-graphic-design.jpg");
+    }
+    .photo {
+        background-image: url("images/desktop/image-photography.jpg");
+    }
+}
